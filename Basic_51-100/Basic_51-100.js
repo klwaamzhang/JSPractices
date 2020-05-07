@@ -1,3 +1,59 @@
+// A59
+document.getElementById("btnExtractQ59").addEventListener("click", () => {
+  let strQ59 = document.getElementById("strQ59").value;
+  document.getElementById("txtAnsQ59").innerHTML = strQ59.substring(
+    0,
+    Math.floor(strQ59.length / 2)
+  );
+});
+
+// A58
+document.getElementById("btnCopyQ58").addEventListener("click", () => {
+  let strQ58 = document.getElementById("strQ58").value;
+  let txtAnsQ58 = "";
+  if (strQ58.length >= 3) {
+    for (let i = 0; i < 4; i++) {
+      txtAnsQ58 += strQ58.substring(strQ58.length - 3);
+    }
+    document.getElementById("txtAnsQ58").innerHTML = txtAnsQ58;
+  } else {
+    document.getElementById("txtAnsQ58").innerHTML =
+      "The string length must be 3 or above";
+  }
+});
+
+// A56
+document.getElementById("btnCheckQ56").addEventListener("click", () => {
+  let strQ56 = document.getElementById("strQ56").value;
+  let numQ56 = parseInt(strQ56);
+  document.getElementById("txtAnsQ56").innerHTML = numQ56
+    ? strQ56[0] + "," + strQ56[1]
+    : "This string is not a number";
+});
+
+// A54
+document.getElementById("btnCheckQ54").addEventListener("click", () => {
+  let strQ54 = document.getElementById("strQ54").value;
+  let count = 0;
+  for (let i = 0; i < strQ54.length; i++) {
+    if (
+      strQ54[i] === "a" ||
+      strQ54[i] === "e" ||
+      strQ54[i] === "i" ||
+      strQ54[i] === "o" ||
+      strQ54[i] === "u" ||
+      strQ54[i] === "A" ||
+      strQ54[i] === "E" ||
+      strQ54[i] === "I" ||
+      strQ54[i] === "O" ||
+      strQ54[i] === "U"
+    ) {
+      count += 1;
+    }
+  }
+  document.getElementById("txtAnsQ54").innerHTML = count;
+});
+
 // A53
 document.getElementById("btnCheckQ53").addEventListener("click", () => {
   document.getElementById("txtAnsQ53").innerHTML = "false";
