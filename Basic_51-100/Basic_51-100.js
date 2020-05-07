@@ -1,3 +1,23 @@
+// A68
+document.getElementById("btnExtractQ68").addEventListener("click", () => {
+  let strQ68 = document.getElementById("strQ68").value;
+  let nQ68 = parseInt(document.getElementById("nQ68").value);
+  document.getElementById("txtAnsQ68").innerHTML = !nQ68
+    ? "Please input the right n number"
+    : strQ68.length >= nQ68
+    ? strQ68.substring(0, nQ68) + strQ68.substring(strQ68.length - nQ68)
+    : "String length must be longer than n";
+});
+
+// A63
+document.getElementById("btnExtractQ63").addEventListener("click", () => {
+  let strQ63 = document.getElementById("strQ63").value;
+  document.getElementById("txtAnsQ63").innerHTML =
+    strQ63.length % 2 !== 0 && strQ63 >= 3
+      ? strQ63.substring((strQ63.length - 3) / 2, (strQ63.length + 3) / 2)
+      : "Please input right odd string and the length >= 3";
+});
+
 // A59
 document.getElementById("btnExtractQ59").addEventListener("click", () => {
   let strQ59 = document.getElementById("strQ59").value;
