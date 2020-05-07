@@ -1,3 +1,56 @@
+// A80
+document.getElementById("btnCheckQ80").addEventListener("click", () => {
+  let strQ80 = document.getElementById("strQ80").value;
+  if (strQ80) {
+    let arrQ80 = strQ80.split(" ");
+    let temp = arrQ80[0];
+    arrQ80[0] = arrQ80[arrQ80.length - 1];
+    arrQ80[arrQ80.length - 1] = temp;
+    document.getElementById("txtAnsQ80").innerHTML = arrQ80;
+  } else {
+    document.getElementById("txtAnsQ80").innerHTML = "blank";
+  }
+});
+
+// A75
+let arr1Q75 = [74, 34, 23];
+let arr2Q75 = [32, 56, 26];
+document.getElementById("txtAnsQ75").innerHTML = [
+  arr1Q75[(arr1Q75.length - 1) / 2],
+  arr2Q75[(arr2Q75.length - 1) / 2],
+];
+
+// A74
+let arrQ74 = [74, 34, 23, 73, 8, 50];
+let biggerNum =
+  arrQ74[0] > arrQ74[arrQ74.length - 1] ? arrQ74[0] : arrQ74[arrQ74.length - 1];
+document.getElementById("txtAnsQ74").innerHTML = arrQ74.fill(biggerNum, 0);
+
+// A73
+let arrQ73 = ["apple", "pear", "banana"];
+document.getElementById("txtAnsQ73").innerHTML = arrQ73.reverse();
+
+// A71
+document.getElementById("btnCheckQ71").addEventListener("click", () => {
+  let strQ71 = document.getElementById("strQ71").value;
+  let arrQ71 = strQ71.split(" ");
+  console.log(arrQ71);
+  document.getElementById("txtAnsQ71").innerHTML = strQ71
+    ? arrQ71[0].includes(1) || arrQ71[arrQ71.length - 1].includes(1)
+      ? "true"
+      : "false"
+    : "The string should not be null";
+});
+
+// A70
+let arrA70 = [70, 71, 72];
+document.getElementById("txtAnsQ70").innerHTML = arrA70;
+setInterval(() => {
+  let firstElement = arrA70.shift();
+  arrA70.push(firstElement);
+  document.getElementById("txtAnsQ70").innerHTML = arrA70;
+}, 3000);
+
 // A68
 document.getElementById("btnExtractQ68").addEventListener("click", () => {
   let strQ68 = document.getElementById("strQ68").value;
