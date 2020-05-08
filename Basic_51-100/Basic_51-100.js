@@ -1,3 +1,17 @@
+// A90
+document.getElementById("btnFindQ90").addEventListener("click", () => {
+  let arrQ90 = document.getElementById("strQ90").value.split(" ");
+  const reducerQ90 = (acc, cur, i) => {
+    if (parseInt(cur) >= parseInt(acc[0])) {
+      return [cur, i];
+    } else {
+      return acc;
+    }
+  };
+  document.getElementById("txtAnsQ90").innerHTML =
+    "The greatest element is at " + arrQ90.reduce(reducerQ90, [0, 0])[1] + "th";
+});
+
 // A87
 document.getElementById("btnCheckQ87").addEventListener("click", () => {
   let arr1Q87 = document.getElementById("str1Q87").value.split(" ");
@@ -27,14 +41,14 @@ document.getElementById("btnCheckQ87").addEventListener("click", () => {
 document.getElementById("btnComputeQ83").addEventListener("click", () => {
   let strQ85 = document.getElementById("strQ85").value;
   let arrQ85 = strQ85.split(" ");
-  const reducer = (acc, cur, i) => {
+  const reducerQ85 = (acc, cur, i) => {
     if (i % 2 === 0) {
       return [parseInt(acc[0]) + parseInt(cur), parseInt(acc[1])];
     } else {
       return [parseInt(acc[0]), parseInt(acc[1]) + parseInt(cur)];
     }
   };
-  document.getElementById("txtAnsQ85").innerHTML = arrQ85.reduce(reducer, [
+  document.getElementById("txtAnsQ85").innerHTML = arrQ85.reduce(reducerQ85, [
     0,
     0,
   ]);
