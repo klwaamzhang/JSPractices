@@ -1,3 +1,43 @@
+// A85
+document.getElementById("btnComputeQ83").addEventListener("click", () => {
+  let strQ85 = document.getElementById("strQ85").value;
+  let arrQ85 = strQ85.split(" ");
+  const reducer = (acc, cur, i) => {
+    if (i % 2 === 0) {
+      return [parseInt(acc[0]) + parseInt(cur), parseInt(acc[1])];
+    } else {
+      return [parseInt(acc[0]), parseInt(acc[1]) + parseInt(cur)];
+    }
+  };
+  document.getElementById("txtAnsQ85").innerHTML = arrQ85.reduce(reducer, [
+    0,
+    0
+  ]);
+  //   let subArr1Q85 = arrQ85.filter((e, i) => i % 2 === 0);
+  //   let subArr2Q85 = arrQ85.filter((e, i) => i % 2 !== 0);
+  //   const reducer = (acc, cur) => parseInt(acc) + parseInt(cur);
+  //   let sum1 = subArr1Q85.reduce(reducer);
+  //   let sum2 = subArr2Q85.reduce(reducer);
+  //   document.getElementById("txtAnsQ85").innerHTML = [sum1, sum2];
+});
+
+// A83
+document.getElementById("btnFindQ83").addEventListener("click", () => {
+  let strQ83 = document.getElementById("strQ83").value;
+  if (strQ83) {
+    let arrQ83 = strQ83.split(" ");
+    let longest = "";
+    for (let i = 0; i < arrQ83.length; i++) {
+      if (arrQ83[i].length >= longest.length) {
+        longest = arrQ83[i];
+      }
+    }
+    document.getElementById("txtAnsQ83").innerHTML = longest;
+  } else {
+    document.getElementById("txtAnsQ83").innerHTML = "blank";
+  }
+});
+
 // A80
 document.getElementById("btnCheckQ80").addEventListener("click", () => {
   let strQ80 = document.getElementById("strQ80").value;
