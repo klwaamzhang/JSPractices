@@ -1,3 +1,26 @@
+// A91
+document.getElementById("btnFindQ91").addEventListener("click", () => {
+  let arrQ91 = document.getElementById("strQ91").value.split(" ");
+  let kQ91 = document.getElementById("kQ91").value;
+  const reducerQ91 = (acc, cur, i) => {
+    if (i <= arrQ91.length - kQ91) {
+      let sum = 0;
+      for (let n = 0; n < kQ91; n++) {
+        sum += parseInt(arrQ91[i]);
+        i += 1;
+      }
+      if (sum >= acc) {
+        return sum;
+      } else {
+        return acc;
+      }
+    } else {
+      return acc;
+    }
+  };
+  document.getElementById("txtAnsQ91").innerHTML = arrQ91.reduce(reducerQ91);
+});
+
 // A90
 document.getElementById("btnFindQ90").addEventListener("click", () => {
   let arrQ90 = document.getElementById("strQ90").value.split(" ");
