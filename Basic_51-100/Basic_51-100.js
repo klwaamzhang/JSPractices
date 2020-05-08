@@ -1,3 +1,28 @@
+// A87
+document.getElementById("btnCheckQ87").addEventListener("click", () => {
+  let arr1Q87 = document.getElementById("str1Q87").value.split(" ");
+  let arr2Q87 = document.getElementById("str2Q87").value.split(" ");
+  let count = 0;
+  let swapFlag = false;
+  for (let i = 0; i < arr1Q87.length; i++) {
+    if (arr1Q87[i] !== arr2Q87[i]) {
+      if (
+        arr1Q87[arr1Q87.indexOf(arr2Q87[i])] === arr2Q87[i] &&
+        arr2Q87[arr2Q87.indexOf(arr1Q87[i])] === arr1Q87[i]
+      ) {
+        swapFlag = true;
+      } else {
+        swapFlag = false;
+      }
+      count += 1;
+    }
+  }
+  document.getElementById("txtAnsQ87").innerHTML =
+    (swapFlag === true && count === 2) || (swapFlag === false && count === 0)
+      ? "Similar"
+      : "Not Similar";
+});
+
 // A85
 document.getElementById("btnComputeQ83").addEventListener("click", () => {
   let strQ85 = document.getElementById("strQ85").value;
@@ -11,7 +36,7 @@ document.getElementById("btnComputeQ83").addEventListener("click", () => {
   };
   document.getElementById("txtAnsQ85").innerHTML = arrQ85.reduce(reducer, [
     0,
-    0
+    0,
   ]);
   //   let subArr1Q85 = arrQ85.filter((e, i) => i % 2 === 0);
   //   let subArr2Q85 = arrQ85.filter((e, i) => i % 2 !== 0);
