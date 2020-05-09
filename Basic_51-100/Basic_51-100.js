@@ -1,3 +1,19 @@
+// A98
+document.getElementById("btnSwitchQ98").addEventListener("click", () => {
+  let strQ98 = document.getElementById("strQ98").value;
+  let uCount = 0;
+  let lCount = 0;
+  for (let i = 0; i < strQ98.length; i++) {
+    if (strQ98.charCodeAt(i) >= 65 && strQ98.charCodeAt(i) <= 90) {
+      uCount++;
+    } else if (strQ98.charCodeAt(i) >= 97 && strQ98.charCodeAt(i) <= 122) {
+      lCount++;
+    }
+  }
+  document.getElementById("txtAnsQ98").innerHTML =
+    lCount <= uCount ? strQ98.toUpperCase() : strQ98.toLowerCase();
+});
+
 // A97
 document.getElementById("btnGenerateQ97").addEventListener("click", () => {
   let strQ97 = document.getElementById("strQ97").value;
