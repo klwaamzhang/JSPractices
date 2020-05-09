@@ -1,3 +1,57 @@
+// A97
+document.getElementById("btnGenerateQ97").addEventListener("click", () => {
+  let strQ97 = document.getElementById("strQ97").value;
+  let centerI = 0;
+  let countP = 0;
+  for (
+    let i =
+      strQ97.length % 2 === 0 ? strQ97.length / 2 : (strQ97.length + 1) / 2;
+    i < strQ97.length;
+    i++
+  ) {
+    let count = 0;
+    for (let n = 0; n < strQ97.length - i; n++) {
+      if (strQ97[i + n] === strQ97[i - n - 1]) {
+        count++;
+      }
+    }
+    if (count === strQ97.length - i) {
+      centerI = i;
+      countP = count;
+      break;
+    } else {
+      centerI = i;
+    }
+  }
+  if (countP !== 0) {
+    for (let i = 0; i < centerI - countP; i++) {
+      strQ97 += strQ97[centerI - i - countP - 1];
+    }
+  } else {
+    for (let i = strQ97.length - 1; i >= 0; i--) {
+      strQ97 += strQ97[i];
+    }
+  }
+  document.getElementById("txtAnsQ97").innerHTML = strQ97;
+});
+
+// A96
+document.getElementById("btnComputeQ96").addEventListener("click", () => {
+  let arrQ96 = document.getElementById("strQ96").value.split(" ");
+  let reducerQ96 = (acc, cur, i, arr) =>
+    i < arr.length - 1
+      ? acc + Math.abs(parseInt(arr[i + 1]) - parseInt(cur))
+      : acc;
+  document.getElementById("txtAnsQ96").innerHTML = arrQ96.reduce(reducerQ96, 0);
+});
+
+// A95
+document.getElementById("btnReplaceQ95").addEventListener("click", () => {
+  let arrQ95 = document.getElementById("strQ95").value.split(" ");
+  let numQ95 = document.getElementById("numQ95").value;
+  document.getElementById("txtAnsQ95").innerHTML = arrQ95.fill(numQ95);
+});
+
 // A94
 // needs to improve?
 document.getElementById("btnFindQ94").addEventListener("click", () => {
