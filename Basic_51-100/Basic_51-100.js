@@ -1,9 +1,27 @@
+// A93
+document.getElementById("btnFindQ93").addEventListener("click", () => {
+  let arrQ93 = document.getElementById("strQ93").value.split(" ");
+  let init = parseInt(arrQ93[0]);
+  const reducerQ93 = (acc, cur) => {
+    cur = parseInt(cur);
+    if (cur <= acc[0]) {
+      acc[0] = cur;
+    } else if (cur >= acc[1]) {
+      acc[1] = cur;
+    }
+    return acc;
+  };
+  document.getElementById("txtAnsQ93").innerHTML = Math.abs(
+    arrQ93.reduce(reducerQ93, [init, init])[0] -
+      arrQ93.reduce(reducerQ93, [init, init])[1]
+  );
+});
+
 // A92
 document.getElementById("btnFindQ92").addEventListener("click", () => {
   let arrQ92 = document.getElementById("strQ92").value.split(" ");
   const reducerQ92 = (acc, cur, i, arr) =>
-    i < arrQ92.length - 1 &&
-    Math.abs(parseInt(arr[i + 1]) - parseInt(cur)) >= acc
+    i < arr.length - 1 && Math.abs(parseInt(arr[i + 1]) - parseInt(cur)) >= acc
       ? Math.abs(parseInt(arr[i + 1]) - parseInt(cur))
       : acc;
   document.getElementById("txtAnsQ92").innerHTML = arrQ92.reduce(reducerQ92);
