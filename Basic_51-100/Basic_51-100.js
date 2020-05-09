@@ -1,3 +1,35 @@
+// A94
+// needs to improve?
+document.getElementById("btnFindQ94").addEventListener("click", () => {
+  let arrQ94 = document.getElementById("strQ94").value.split(" ");
+  let fArrQ94 = [];
+  let maxF;
+  for (let i = 0; i < arrQ94.length; i++) {
+    if (fArrQ94.length === 0) {
+      fArrQ94[0] = [arrQ94[0], 1];
+    } else {
+      for (let n = 0; n < fArrQ94.length; n++) {
+        if (arrQ94[i] === fArrQ94[n][0]) {
+          fArrQ94[n][1] += 1;
+        } else {
+          fArrQ94.push([arrQ94[i], 1]);
+        }
+      }
+    }
+  }
+  for (let i = 0; i < fArrQ94.length; i++) {
+    if (!maxF) {
+      maxF = fArrQ94[i];
+    } else {
+      if (fArrQ94[i][1] >= maxF[1]) {
+        maxF = fArrQ94[i];
+      }
+    }
+  }
+  document.getElementById("txtAnsQ94").innerHTML =
+    "The number appears most is " + maxF[0];
+});
+
 // A93
 document.getElementById("btnFindQ93").addEventListener("click", () => {
   let arrQ93 = document.getElementById("strQ93").value.split(" ");
