@@ -1,3 +1,28 @@
+// A100
+document.getElementById("btnCheckQ100").addEventListener("click", () => {
+  let arr1Q100 = document.getElementById("str1Q100").value.split(" ");
+  let arr2Q100 = document.getElementById("str2Q100").value.split(" ");
+  let flag = false;
+  for (let i = 0; i < arr1Q100.length; i++) {
+    if (arr2Q100.includes(arr1Q100[i])) {
+      flag = true;
+      break;
+    }
+  }
+  document.getElementById("txtAnsQ100").innerHTML = flag;
+});
+
+// A99
+document.getElementById("btnCheckQ99").addEventListener("click", () => {
+  let arr1Q99 = document.getElementById("str1Q99").value.split("").sort();
+  let arr2Q99 = document.getElementById("str2Q99").value.split("").sort();
+  document.getElementById("txtAnsQ99").innerHTML =
+    arr1Q99.length === arr2Q99.length &&
+    arr1Q99.every((cur, i) => cur === arr2Q99[i])
+      ? "true"
+      : "false";
+});
+
 // A98
 document.getElementById("btnSwitchQ98").addEventListener("click", () => {
   let strQ98 = document.getElementById("strQ98").value;
