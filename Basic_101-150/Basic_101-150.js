@@ -1,7 +1,7 @@
 // A105
 document.getElementById("btnFindQ105").addEventListener("click", () => {
   let numQ105 = document.getElementById("strQ105").value;
-  let count = 0;
+  var count = 0;
   let timesFuncQ105 = (num) => {
     let sum = 0;
     for (let i = 0; i < num.length; i++) {
@@ -10,10 +10,9 @@ document.getElementById("btnFindQ105").addEventListener("click", () => {
     }
     count++;
     if (sum < 10) {
-      return count;
+      return;
     } else {
-      let num = sum.toString();
-      timesFuncQ105(num);
+      timesFuncQ105(sum.toString());
     }
   };
   timesFuncQ105(numQ105);
