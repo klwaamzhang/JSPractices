@@ -1,3 +1,49 @@
+// A109
+document.getElementById("btnComputeQ109").addEventListener("click", () => {
+  let numQ109 = parseInt(document.getElementById("strQ109").value);
+  let primeNumArrQ109 = [1, 2];
+  let isPrime = (n) => {
+    for (let i = 3; i <= Math.sqrt(n); i += 2) {
+      if (n % i === 0) return false;
+    }
+    return true;
+  };
+  for (let n = 3; n <= numQ109; n += 2) {
+    if (isPrime(n)) {
+      primeNumArrQ109.push(n);
+    }
+  }
+
+  document.getElementById("txtAnsQ109").innerHTML = primeNumArrQ109;
+});
+
+// A108
+document.getElementById("btnComputeQ108").addEventListener("click", () => {
+  let vec1A108 = document.getElementById("str1Q108").value.split(" ");
+  let vec2A108 = document.getElementById("str2Q108").value.split(" ");
+  document.getElementById("txtAnsQ108").innerHTML =
+    parseInt(vec1A108[0]) * parseInt(vec2A108[0]) +
+    parseInt(vec1A108[1]) * parseInt(vec2A108[1]) +
+    parseInt(vec1A108[2]) * parseInt(vec2A108[2]);
+});
+
+// A107
+document.getElementById("btnComputeQ107").addEventListener("click", () => {
+  let arrQ107 = document.getElementById("strQ107").value.split(" ");
+  let count = 0;
+  for (let i = 0; i < arrQ107.length - 1; i++) {
+    for (let j = i + 1; j < arrQ107.length; j++) {
+      if (
+        parseInt(arrQ107[i]) % parseInt(arrQ107[j]) === 0 ||
+        parseInt(arrQ107[j]) % parseInt(arrQ107[i]) === 0
+      ) {
+        count++;
+      }
+    }
+  }
+  document.getElementById("txtAnsQ107").innerHTML = count;
+});
+
 // A106
 document.getElementById("btnCheckQ106").addEventListener("click", () => {
   let num1Q106 = parseInt(document.getElementById("str1Q106").value);
