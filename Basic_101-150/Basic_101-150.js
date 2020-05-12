@@ -1,3 +1,16 @@
+// A106
+document.getElementById("btnCheckQ106").addEventListener("click", () => {
+  let num1Q106 = parseInt(document.getElementById("str1Q106").value);
+  let num2Q106 = parseInt(document.getElementById("str2Q106").value);
+  document.getElementById("txtAnsQ106").innerHTML = Number.isInteger(
+    num2Q106 / num1Q106
+  )
+    ? num2Q106 / num1Q106
+    : Number.isInteger(num1Q106 / num2Q106)
+    ? num1Q106 / num2Q106
+    : "false";
+});
+
 // A105
 document.getElementById("btnFindQ105").addEventListener("click", () => {
   let numQ105 = document.getElementById("strQ105").value;
