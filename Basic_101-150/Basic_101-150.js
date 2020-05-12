@@ -1,3 +1,16 @@
+// A110
+document.getElementById("btnComputeQ110").addEventListener("click", () => {
+  let arrQ110 = document.getElementById("str1Q110").value.split(" ");
+  let numQ110 = document.getElementById("str2Q110").value;
+  let count = 0;
+  for (let i = 0; i < arrQ110.indexOf(numQ110); i++) {
+    if (arrQ110[i] % 2 === 0) {
+      count++;
+    }
+  }
+  document.getElementById("txtAnsQ110").innerHTML = count;
+});
+
 // A109
 document.getElementById("btnComputeQ109").addEventListener("click", () => {
   let numQ109 = parseInt(document.getElementById("strQ109").value);
