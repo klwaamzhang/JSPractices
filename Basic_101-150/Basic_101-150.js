@@ -1,3 +1,14 @@
+// A120
+document.getElementById("btnCheckQ120").addEventListener("click", () => {
+  let x = parseInt(document.getElementById("str1Q120").value[0]);
+  let y = parseInt(document.getElementById("str1Q120").value[2]);
+  let r = parseInt(document.getElementById("str2Q120").value);
+  let a = parseInt(document.getElementById("str3Q120").value[0]);
+  let b = parseInt(document.getElementById("str3Q120").value[2]);
+  document.getElementById("txtAnsQ120").innerHTML =
+    Math.pow(x - a, 2) + Math.pow(y - b, 2) < Math.pow(r, 2) ? true : false;
+});
+
 // A116
 document.getElementById("btnGenerateQ116").addEventListener("click", () => {
   let strQ116 = document.getElementById("strQ116").value;
