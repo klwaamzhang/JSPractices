@@ -1,3 +1,51 @@
+// A116
+document.getElementById("btnGenerateQ116").addEventListener("click", () => {
+  let strQ116 = document.getElementById("strQ116").value;
+  let sumOfN = (str) => {
+    let sum = 0;
+    for (let i = 0; i < str.length; i++) {
+      if (i !== str.indexOf("#")) {
+        sum += parseInt(str[i]);
+      }
+    }
+    return sum;
+  };
+  let ansQ116 = [];
+  for (let i = 0; i < 10; i++) {
+    if ((sumOfN(strQ116) + i) % 3 === 0) {
+      ansQ116.push(strQ116.replace("#", i));
+    }
+  }
+  document.getElementById("txtAnsQ116").innerHTML = ansQ116;
+});
+
+// A115
+let isDiagnalM = (m) => {
+  if (m.length === m[0].length) {
+    for (let i = 0; i < m.length; i++) {
+      for (let j = 0; j < m.length; j++) {
+        if ((i !== j && m[i][j] !== 0) || (i === j && m[i][j] === 0))
+          return false;
+      }
+    }
+    return true;
+  } else {
+    return false;
+  }
+};
+document.getElementById("txtAnsQ115").innerHTML =
+  isDiagnalM([
+    [1, 0, 0],
+    [0, 2, 0],
+    [0, 0, 3],
+  ]) +
+  "<br/>" +
+  isDiagnalM([
+    [1, 0, 0],
+    [0, 2, 3],
+    [0, 0, 3],
+  ]);
+
 // A114
 document.getElementById("btnCheckQ114").addEventListener("click", () => {
   let strQ114 = document.getElementById("strQ114").value;
