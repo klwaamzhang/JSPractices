@@ -1,3 +1,45 @@
+// A114
+document.getElementById("btnCheckQ114").addEventListener("click", () => {
+  let strQ114 = document.getElementById("strQ114").value;
+  document.getElementById("txtAnsQ114").innerHTML =
+    strQ114.charCodeAt(0) > 64 &&
+    strQ114.charCodeAt(0) < 91 &&
+    strQ114.endsWith(".")
+      ? "true"
+      : "false";
+});
+
+// A113
+document.getElementById("btnCalculateQ113").addEventListener("click", () => {
+  let numQ113 = parseInt(document.getElementById("strQ113").value);
+  let sum = 0;
+  let n = numQ113;
+  while (n > 0) {
+    sum += Math.floor(n);
+    n /= 2;
+  }
+  document.getElementById("txtAnsQ113").innerHTML = sum;
+});
+
+// A112
+document.getElementById("btnFindQ112").addEventListener("click", () => {
+  let numQ112 = parseInt(document.getElementById("strQ112").value);
+  document.getElementById("txtAnsQ112").innerHTML = Math.floor(numQ112 / 5);
+});
+
+// A111
+document.getElementById("btnFindQ111").addEventListener("click", () => {
+  let num1Q111 = parseInt(document.getElementById("str1Q111").value);
+  let num2Q111 = parseInt(document.getElementById("str2Q111").value);
+  let num3Q111 = parseInt(document.getElementById("str3Q111").value);
+  document.getElementById("txtAnsQ111").innerHTML =
+    num1Q111 === num2Q111
+      ? num3Q111
+      : num1Q111 === num3Q111
+      ? num2Q111
+      : num1Q111;
+});
+
 // A110
 document.getElementById("btnComputeQ110").addEventListener("click", () => {
   let arrQ110 = document.getElementById("str1Q110").value.split(" ");
