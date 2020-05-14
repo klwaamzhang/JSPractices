@@ -1,3 +1,47 @@
+// A125
+document.getElementById("btnFindQ125").addEventListener("click", () => {
+  let arrQ125 = document.getElementById("strQ125").value.split(" ");
+  let longestStr = arrQ125[0];
+  for (i = 1; i < arrQ125.length; i++) {
+    if (arrQ125[i].length >= longestStr.length) {
+      longestStr = arrQ125[i];
+    }
+  }
+  document.getElementById("txtAnsQ125").innerHTML = longestStr;
+});
+
+// A124
+let isNor = (x, y) => {
+  return !(x || y);
+};
+document.getElementById("txtAnsQ124").innerHTML =
+  isNor(true, false) + "<br/>" + isNor(false, false);
+
+// A122
+document.getElementById("btnCheckQ122").addEventListener("click", () => {
+  let arrQ122 = document.getElementById("strQ122").value.split(" ");
+  let isInorDe = (arr) => {
+    if (parseInt(arr[0]) - parseInt(arr[1]) > 0) {
+      for (let i = 0; i < arr.length - 1; i++) {
+        if (parseInt(arr[i]) <= parseInt(arr[i + 1])) {
+          return false;
+        }
+      }
+      return true;
+    } else if (parseInt(arr[0]) - parseInt(arr[1]) < 0) {
+      for (let i = 0; i < arr.length - 1; i++) {
+        if (parseInt(arr[i]) >= parseInt(arr[i + 1])) {
+          return false;
+        }
+      }
+      return true;
+    } else {
+      return false;
+    }
+  };
+  document.getElementById("txtAnsQ122").innerHTML = isInorDe(arrQ122);
+});
+
 // A120
 document.getElementById("btnCheckQ120").addEventListener("click", () => {
   let x = parseInt(document.getElementById("str1Q120").value[0]);
