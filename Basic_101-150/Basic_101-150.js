@@ -1,3 +1,10 @@
+// A128
+document.getElementById("btnRoundUpQ128").addEventListener("click", () => {
+  let numQ128 = parseInt(document.getElementById("strQ128").value);
+  document.getElementById("txtAnsQ128").innerHTML =
+    Math.ceil(numQ128 / 10) * 10;
+});
+
 // A127
 document.getElementById("btnReverseQ127").addEventListener("click", () => {
   let numQ127 = parseInt(document.getElementById("strQ127").value);
