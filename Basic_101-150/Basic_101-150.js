@@ -1,3 +1,39 @@
+// A129
+document.getElementById("btnFindQ129").addEventListener("click", () => {
+  let numQ128 = parseInt(document.getElementById("strQ129").value);
+  let findP = (n) => {
+    let flag = false;
+    if (n % 2 !== 0 && n !== 1) {
+      while (flag === false) {
+        n += 2;
+        flag = true;
+        for (let i = 3; i <= Math.sqrt(n); i += 2) {
+          if (n % i === 0) {
+            flag = false;
+            break;
+          }
+        }
+      }
+    } else if (n === 1) {
+      n = 2;
+    } else {
+      n += 1;
+      while (flag === false) {
+        flag = true;
+        for (let i = 3; i <= Math.sqrt(n); i += 2) {
+          if (n % i === 0) {
+            flag = false;
+            break;
+          }
+        }
+        if (flag === false) n += 2;
+      }
+    }
+    return n;
+  };
+  console.log(findP(numQ128));
+});
+
 // A128
 document.getElementById("btnRoundUpQ128").addEventListener("click", () => {
   let numQ128 = parseInt(document.getElementById("strQ128").value);
