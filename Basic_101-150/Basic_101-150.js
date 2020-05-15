@@ -1,3 +1,19 @@
+// A127
+document.getElementById("btnReverseQ127").addEventListener("click", () => {
+  let numQ127 = parseInt(document.getElementById("strQ127").value);
+  let bitQ127 = [];
+  while (!(numQ127 === 0)) {
+    bitQ127.push(Math.floor(numQ127 % 2));
+    numQ127 = Math.floor(numQ127 / 2);
+  }
+  let bitAns = bitQ127.reverse().join("");
+  let ans = 0;
+  for (let i = 0; i < bitAns.length; i++) {
+    ans += bitAns[i] * Math.pow(2, i);
+  }
+  document.getElementById("txtAnsQ127").innerHTML = ans;
+});
+
 // A125
 document.getElementById("btnFindQ125").addEventListener("click", () => {
   let arrQ125 = document.getElementById("strQ125").value.split(" ");
