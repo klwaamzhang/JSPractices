@@ -1,37 +1,34 @@
+// A131
+document.getElementById("btnComputeQ131").addEventListener("click", () => {
+  let arrQ131 = document.getElementById("strQ131").value.split(" ");
+  let ansArr = [arrQ131[0]];
+  for (let i = 1; i < arrQ131.length; i++) {
+    ansArr.push(parseInt(ansArr[i - 1]) + parseInt(arrQ131[i]));
+  }
+  document.getElementById("txtAnsQ131").innerHTML = ansArr;
+});
+
 // A129
 document.getElementById("btnFindQ129").addEventListener("click", () => {
   let numQ128 = parseInt(document.getElementById("strQ129").value);
   let findP = (n) => {
     let flag = false;
-    if (n % 2 !== 0 && n !== 1) {
-      while (flag === false) {
-        n += 2;
-        flag = true;
-        for (let i = 3; i <= Math.sqrt(n); i += 2) {
-          if (n % i === 0) {
-            flag = false;
-            break;
-          }
+    if (n % 2 !== 0 && n !== 1) n += 2;
+    else if (n === 1) n = 2;
+    else n += 1;
+    while (flag === false) {
+      flag = true;
+      for (let i = 3; i <= Math.sqrt(n); i += 2) {
+        if (n % i === 0) {
+          flag = false;
+          break;
         }
       }
-    } else if (n === 1) {
-      n = 2;
-    } else {
-      n += 1;
-      while (flag === false) {
-        flag = true;
-        for (let i = 3; i <= Math.sqrt(n); i += 2) {
-          if (n % i === 0) {
-            flag = false;
-            break;
-          }
-        }
-        if (flag === false) n += 2;
-      }
+      if (flag === false) n += 2;
     }
     return n;
   };
-  console.log(findP(numQ128));
+  document.getElementById("txtAnsQ129").innerHTML = findP(numQ128);
 });
 
 // A128
