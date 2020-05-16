@@ -1,3 +1,24 @@
+// A132
+document.getElementById("btnComputeQ132").addEventListener("click", () => {
+  let num = parseInt(document.getElementById("strQ132").value);
+  let arrAns = [];
+  let isPrime = (n) => {
+    for (let i = 3; i <= Math.sqrt(n); i += 2) {
+      if (n % i === 0) return false;
+    }
+    return true;
+  };
+  if (num % 2 === 0) {
+    arrAns.push(2);
+  }
+  for (let n = 3; n <= num; n += 2) {
+    if (num % n === 0 && isPrime(n)) {
+      arrAns.push(n);
+    }
+  }
+  document.getElementById("txtAnsQ132").innerHTML = arrAns;
+});
+
 // A131
 document.getElementById("btnComputeQ131").addEventListener("click", () => {
   let arrQ131 = document.getElementById("strQ131").value.split(" ");
