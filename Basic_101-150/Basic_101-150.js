@@ -1,3 +1,28 @@
+// A135
+document.getElementById("btnComputeQ135").addEventListener("click", () => {
+  let strArr = document.getElementById("strQ135").value.split("");
+  let ansArr = [];
+  let strOlength = strArr.length;
+  for (let i = 0; i < strOlength; i++) {
+    let fir = strArr.shift();
+    if (!ansArr.some((e) => e === fir)) {
+      ansArr.push(fir);
+    } else {
+      ansArr.splice(ansArr.indexOf(fir), 1);
+    }
+  }
+  document.getElementById("txtAnsQ135").innerHTML = ansArr.join("");
+});
+
+// A134
+document.getElementById("btnComputeQ134").addEventListener("click", () => {
+  let char = document.getElementById("strQ134").value;
+  document.getElementById("txtAnsQ134").innerHTML =
+    char.charCodeAt(0) < 122
+      ? (char = String.fromCharCode(char.charCodeAt(0) + 1))
+      : (char = String.fromCharCode(97));
+});
+
 // A132
 document.getElementById("btnComputeQ132").addEventListener("click", () => {
   let num = parseInt(document.getElementById("strQ132").value);
