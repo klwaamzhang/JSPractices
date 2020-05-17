@@ -1,3 +1,23 @@
+// A142
+document.getElementById("btnSimplifyQ142").addEventListener("click", () => {
+  let strArr = document.getElementById("strQ142").value.split("/");
+  let res = strArr.filter((e) => e !== "." && e !== "");
+  let ans = "";
+  for (let i = 0; i < res.length; i++) {
+    if (res[i] === ".." && i !== 0) {
+      res.splice(i - 1, 2);
+      i -= 2;
+    }
+  }
+  if (res.indexOf("..") === -1) {
+    ans = "/" + res.join("/");
+  } else {
+    ans = res.join("/");
+  }
+
+  console.log(ans);
+});
+
 // A135
 document.getElementById("btnComputeQ135").addEventListener("click", () => {
   let strArr = document.getElementById("strQ135").value.split("");
