@@ -1,3 +1,18 @@
+// A150
+document.getElementById("btnSwapQ150").addEventListener("click", () => {
+  let strArr = document.getElementById("strQ150").value.split("");
+  if (strArr.length % 2 === 0) {
+    for (let i = 0; i < strArr.length; i += 2) {
+      let temp = strArr[i];
+      strArr[i] = strArr[i + 1];
+      strArr[i + 1] = temp;
+    }
+  } else {
+    strArr = false;
+  }
+  document.getElementById("txtAnsQ150").innerHTML = strArr;
+});
+
 // A149
 document.getElementById("btnChangeQ149").addEventListener("click", () => {
   let strArr = document.getElementById("strQ149").value;
