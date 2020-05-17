@@ -1,3 +1,15 @@
+// A145
+document.getElementById("btnFindQ145").addEventListener("click", () => {
+  let int = parseInt(document.getElementById("strQ145").value);
+  let n = 0;
+  let sum = 0;
+  while (sum <= int) {
+    n++;
+    sum += n;
+  }
+  document.getElementById("txtAnsQ145").innerHTML = n - 1;
+});
+
 // A144
 document.getElementById("btnExtractQ144").addEventListener("click", () => {
   let address = document.getElementById("strQ144").value.split("/");
