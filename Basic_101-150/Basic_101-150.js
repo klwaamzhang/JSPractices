@@ -1,3 +1,18 @@
+// A143
+document.getElementById("btnSortQ143").addEventListener("click", () => {
+  let strArr = document.getElementById("strQ143").value.split(" ");
+  for (let i = 0; i < strArr.length; i++) {
+    for (let j = 0; j < strArr.length - i - 1; j++) {
+      if (strArr[j].length > strArr[j + 1].length) {
+        let temp = strArr[j];
+        strArr[j] = strArr[j + 1];
+        strArr[j + 1] = temp;
+      }
+    }
+  }
+  console.log(strArr);
+});
+
 // A142
 document.getElementById("btnSimplifyQ142").addEventListener("click", () => {
   let strArr = document.getElementById("strQ142").value.split("/");
@@ -15,7 +30,7 @@ document.getElementById("btnSimplifyQ142").addEventListener("click", () => {
     ans = res.join("/");
   }
 
-  console.log(ans);
+  document.getElementById("txtAnsQ142").innerHTML = ans;
 });
 
 // A135
