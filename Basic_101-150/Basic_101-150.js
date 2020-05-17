@@ -1,3 +1,21 @@
+// A149
+document.getElementById("btnChangeQ149").addEventListener("click", () => {
+  let strArr = document.getElementById("strQ149").value;
+  let newStr = "";
+  for (let i = 0; i < strArr.length; i++) {
+    let temp;
+    if (strArr.charCodeAt(i) > 64 && strArr.charCodeAt(i) < 91) {
+      temp = strArr[i].toLowerCase();
+    } else if (strArr.charCodeAt(i) > 96 && strArr.charCodeAt(i) < 123) {
+      temp = strArr[i].toUpperCase();
+    } else {
+      temp = strArr[i];
+    }
+    newStr += temp;
+  }
+  document.getElementById("txtAnsQ149").innerHTML = newStr;
+});
+
 // A145
 document.getElementById("btnFindQ145").addEventListener("click", () => {
   let int = parseInt(document.getElementById("strQ145").value);
