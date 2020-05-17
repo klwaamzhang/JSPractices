@@ -1,3 +1,12 @@
+// A144
+document.getElementById("btnExtractQ144").addEventListener("click", () => {
+  let address = document.getElementById("strQ144").value.split("/");
+  address = address.filter((e) => e !== "");
+  address[0] = address[0].slice(0, address[0].length - 1);
+  address[1] = address[1].slice(0, address[1].lastIndexOf("."));
+  document.getElementById("txtAnsQ144").innerHTML = address;
+});
+
 // A143
 document.getElementById("btnSortQ143").addEventListener("click", () => {
   let strArr = document.getElementById("strQ143").value.split(" ");
@@ -10,7 +19,7 @@ document.getElementById("btnSortQ143").addEventListener("click", () => {
       }
     }
   }
-  console.log(strArr);
+  document.getElementById("txtAnsQ143").innerHTML = strArr;
 });
 
 // A142
